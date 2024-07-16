@@ -1,0 +1,53 @@
+#clock-container{
+    position: relative; /* so that the hands get positioned relative to the clock-container */
+    /* border: 5px solid red; */
+    height: 38vw;   /* inorder for it to be responsive, give ht and wt in terms of viewport ht/wt */
+    width: 38vw;
+    background: url("Clock.png"); /*no-repeat;  no-repeat, because we don't want multiple clocks */
+    background-size: 100%; /*Now the image is inside the red box, but it overflows. So, we use a new propety*/
+    margin: auto;       /*to make it center, we use...*/
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#hour, #minute, #second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom; /*as we want the hands to rotate about their end, not the default center */
+}
+
+#hour::after, #minute::after, #second::after {
+    content: '';
+    position: absolute;
+    top: -8%; /* Adjust this value to place the arrow correctly */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black; /* Adjust the size and color of the arrow */
+}
+
+#hour{
+    width: 1.5%;
+    height: 23%;
+    top: 28%;
+    left: 49.0%;
+}
+
+#minute{
+    width: 1.5%;
+    height: 31%;
+    top: 19%;
+    left: 49.5%;
+}
+
+#second{
+    width: 1%;
+    height: 29%;
+    top: 21%;
+    left: 49.8%;
+}
